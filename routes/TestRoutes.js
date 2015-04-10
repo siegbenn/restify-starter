@@ -7,15 +7,16 @@ var redisClient = require("redis").createClient()
 function rateLimit(req, res, next) {
 	var rate = 1
 	var burst = 10
-	var id = req.connection.remoteAddress;
-	var throttle = require("tokenthrottle-redis")({rate: rate, burst: burst, expiry: 86400}, redisClient)
+	var ip = req.connection.remoteAddress;
+	var url = req.url
+	var id = ip + url
+	var throttle = require("tokenthrottle-redis")({rate: rate, burst: burst, expiry: 3600, prefix: 'throttle'}, redisClient)
 
 	throttle.rateLimit(id, function (err, limited) {
 		if (limited) {
 			var message = new restify.errors.TooManyRequestsError('You have exceeded your request rate of ' + rate + ' r/s.')
 			res.send(message)
 		} else {
-			console.log("token")
 			next()
 		}
 	})

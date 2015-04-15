@@ -21,6 +21,7 @@ function rateLimit(req, res, next) {
 		}
 	})
 }
+
 function TestRoutes(server) {
 	server.get('/ping', rateLimit, function(req, res, next) {
 		var testController = new TestController(req, res, next);

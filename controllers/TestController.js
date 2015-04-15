@@ -1,7 +1,12 @@
+// Import the test controller functions.
+var TestFunctions = require('./TestFunctions');
+
 function TestController(req, res, next) {
 
-	this.sendPong = function() {
-		res.send(200, 'pong');
+	testFunctions = new TestFunctions();
+
+	this.sendPong = function() {	
+		res.send(200, testFunctions.pong());
 	};
 }
 

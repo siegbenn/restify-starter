@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test --timout 5000"
   },
   "author": "",
   "license": "ISC",
@@ -16,5 +16,10 @@
     "restify": "^3.0.1",
     "tokenthrottle-redis": "^1.1.0",
     "util": "^0.10.3"
+  },
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "mocha": "^2.2.4",
+    "supertest": "^0.15.0"
   }
 }

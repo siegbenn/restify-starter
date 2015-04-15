@@ -15,6 +15,32 @@ var config = {
 		'burst': 1,
 		'rate': 1,
 		'ip': true
+	},
+	'acl': {
+		'enabled': true,
+		'rules': [{
+			'roles': ['admin'],
+			'allows': [{
+				'resources': [
+					'*'
+				],
+				'permissions': '*'
+			}]
+		}, {
+			'roles': ['user'],
+			'allows': [{
+				'resources': [
+					'*',
+				],
+				'permissions': '*'
+			}]
+		}, {
+			'roles': ['anonymous'],
+			'allows': [{
+				'resources': '/',
+				'permissions': 'get'
+			}]
+		}]
 	}
 };
 

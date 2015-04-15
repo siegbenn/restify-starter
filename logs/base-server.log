@@ -887,3 +887,11 @@
 {"name":"base-server","hostname":"Corner-iMac-2.local","pid":5327,"level":10,"msg":"running ?","time":"2015-04-15T19:25:18.141Z","v":0}
 {"name":"base-server","hostname":"Corner-iMac-2.local","pid":5327,"level":10,"code":200,"headers":{},"body":"pong","msg":"response::send entered","time":"2015-04-15T19:25:18.142Z","v":0}
 {"name":"base-server","hostname":"Corner-iMac-2.local","pid":5327,"level":10,"res":{"statusCode":200,"header":"HTTP/1.1 200 OK\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET,POST,PUT,DELETE\r\nAccess-Control-Allow-Headers: X-Requested-With\r\nContent-Type: application/json\r\nContent-Length: 6\r\nDate: Wed, 15 Apr 2015 19:25:18 GMT\r\nConnection: close\r\n\r\n"},"msg":"response sent","time":"2015-04-15T19:25:18.146Z","v":0}
+{"name":"base-server","hostname":"Corner-iMac-2.local","pid":5361,"level":10,"msg":"running readBody","time":"2015-04-15T19:34:09.032Z","v":0}
+{"name":"base-server","hostname":"Corner-iMac-2.local","pid":5361,"level":10,"msg":"running parseBody","time":"2015-04-15T19:34:09.034Z","v":0}
+{"name":"base-server","hostname":"Corner-iMac-2.local","pid":5361,"level":10,"msg":"running parseQueryString","time":"2015-04-15T19:34:09.034Z","v":0}
+{"name":"base-server","hostname":"Corner-iMac-2.local","pid":5361,"level":10,"msg":"running ?","time":"2015-04-15T19:34:09.035Z","v":0}
+{"name":"base-server","hostname":"Corner-iMac-2.local","pid":5361,"level":10,"msg":"running rateLimit","time":"2015-04-15T19:34:09.035Z","v":0}
+{"name":"base-server","hostname":"Corner-iMac-2.local","pid":5361,"level":10,"msg":"running ?","time":"2015-04-15T19:34:09.061Z","v":0}
+{"name":"base-server","hostname":"Corner-iMac-2.local","pid":5361,"level":10,"code":200,"headers":{},"body":"pong","msg":"response::send entered","time":"2015-04-15T19:34:09.062Z","v":0}
+{"name":"base-server","hostname":"Corner-iMac-2.local","pid":5361,"level":10,"res":{"statusCode":200,"header":"HTTP/1.1 200 OK\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET,POST,PUT,DELETE\r\nAccess-Control-Allow-Headers: X-Requested-With\r\nContent-Type: application/json\r\nContent-Length: 6\r\nDate: Wed, 15 Apr 2015 19:34:09 GMT\r\nConnection: close\r\n\r\n"},"msg":"response sent","time":"2015-04-15T19:34:09.066Z","v":0}

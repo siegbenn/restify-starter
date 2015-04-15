@@ -1,6 +1,7 @@
+var config = require('../config')
 var should = require('chai').should();
 var supertest = require('supertest');
-var api = supertest('http://localhost:8000');
+var api = supertest('http://localhost:' + config.server.port);
 server = require('../index');
 
 describe('TestController', function() {

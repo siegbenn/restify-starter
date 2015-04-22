@@ -3,6 +3,11 @@ var config = {
 		'name': "base-server",
 		'port': 8000
 	},
+	'redis': {
+		'host': '127.0.0.1',
+		'port': 6379,
+		'options': {}
+	},
 	'logging': {
 		'level': 'trace',
 		'loggly': {
@@ -19,26 +24,22 @@ var config = {
 	'acl': {
 		'enabled': true,
 		'rules': [{
-			'roles': ['admin'],
-			'allows': [{
-				'resources': [
-					'*'
-				],
-				'permissions': '*'
+			roles: ['guest', 'member'],
+			allows: [{
+				resources: 'blogs',
+				permissions: 'get'
+			}, {
+				resources: ['forums', 'news'],
+				permissions: ['get', 'put', 'delete']
 			}]
 		}, {
-			'roles': ['user'],
-			'allows': [{
-				'resources': [
-					'*',
-				],
-				'permissions': '*'
-			}]
-		}, {
-			'roles': ['anonymous'],
-			'allows': [{
-				'resources': '/',
-				'permissions': 'get'
+			roles: ['gold', 'silver'],
+			allows: [{
+				resources: 'cash',
+				permissions: ['sell', 'exchange']
+			}, {
+				resources: ['account', 'deposit'],
+				permissions: ['put', 'delete']
 			}]
 		}]
 	}

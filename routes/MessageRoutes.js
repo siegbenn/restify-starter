@@ -1,6 +1,6 @@
 var restify = require('restify');
 var config = require('../config');
-var TestController = require('../controllers/TestController');
+var MessageController = require('../controllers/MessageController');
 // Create a redis client
 var redisClient = require("redis").createClient(config.redis.port, config.redis.host, config.redis.options)
 
@@ -22,12 +22,12 @@ function rateLimit(req, res, next) {
 	})
 }
 
-function TestRoutes(server) {
-	server.get('/ping', rateLimit, function(req, res, next) {
-		var testController = new TestController(req, res, next);
+function MessageRoutes(server) {
+	server.get('/messages', rateLimit, function(req, res, next) {
+		var messageController = new MessageController(req, res, next);
 
-		testController.sendPong();
+		messageController.getMessages();
 	});
 }
 
-module.exports.routes = TestRoutes;
+module.exports.routes = MessageRoutes;

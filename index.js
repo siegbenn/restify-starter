@@ -1,12 +1,13 @@
 // Packages.
 var config = require('./config');
+var acl = require('acl')
 var path = require('path');
 var restify = require('restify')
 var bunyan = require('bunyan');
 var fs = require('fs');
 
 // Logging setup.
-var logglyStream = require('./loggly');
+var logglyStream = require('./helpers/loggly');
 var log = bunyan.createLogger({
 	name: config.server.name,
 	serializers: {
@@ -24,6 +25,11 @@ var log = bunyan.createLogger({
 		stream: new logglyStream()
 	}]
 });
+
+// ACL setup.
+var redisClient = require("redis").createClient(config.redis.port, config.redis.host, config.redis.options)
+acl = new acl(new acl.redisBackend(redisClient, "acl~"))
+acl.allow(config.acl.rules);
 
 // Server setup.
 var server = restify.createServer({
